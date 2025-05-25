@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="/CSS/daftarStyle.css">
+        <link rel="stylesheet" href="/CSS/login.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="h3">Daftar</h1>
+            <form>
+                <label for="username" class="bTextOne f400">Nama</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                            <span class="input-group-text" id="username"><img src="/Images/icon/Profile.svg"></span>
+                    </div>
+                    <input type="text" class="form-control" id="username">
+                </div>
+
+                <label for="email" class="bTextOne f400">Email</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                            <span class="input-group-text" id="email"><img src="/Images/icon/email.svg"></span>
+                    </div>
+                    <input type="email" class="form-control" id="email">
+                </div>
+
+                <label for="password" class="bTextOne f400">Kata Sandi</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                            <span class="input-group-text" id="password"><img src="/Images/icon/locked.svg"></span>
+                    </div>
+                    <input type="password" class="form-control">
+                    <div class="input-group-prepend">
+                            <span class="input-group-text" id="password"><img src="/Images/icon/Hide-Password.svg"></span>
+                    </div>
+                </div>
+
+                <label for="Cpassword" class="bTextOne f400">Konfirmasi Kata Sandi</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                            <span class="input-group-text" id="Cpassword"><img src="/Images/icon/Profile.svg"></span>
+                    </div>
+                    <input type="password" class="form-control">
+                    <div class="input-group-prepend">
+                            <span class="input-group-text" id="Cpassword"><img src="/Images/icon/Hide-Password.svg"></span>
+                    </div>
+                </div>
+            </form>
+            <input type="submit" value="Daftar" class="submitBtn bTextOne f600" onclick="beranda()">
+            <div class="lines">
+                <hr/>
+                <p style="margin: 0;">Atau</p>
+                <hr/>
+            </div>
+            <button class="submitBtn googleBtn bTextTwo f500" onclick="beranda()">
+                <span><img src="/Images/icon/devicon_google.svg"></span>
+                Daftar dengan Google
+            </button>
+            <script>
+                function beranda(){
+                    location.replace("http://127.0.0.1:3000/HTML/beranda.html")
+                }
+            </script>
+            <div class="masuk">
+                <p class="bTextTwo f400">Sudah punya akun?</p>
+                <a href="./masuk.html" class="bTextTwo f500">Masuk</a>
+            </div>
+    
+        </div>
+    </body>
+</html>
