@@ -56,8 +56,14 @@ h4{
     font-style: normal;
     margin: 0;
 }
+
+.bTextThree{
+    font-size: 0.5rem;
+    font-style: normal;
+    margin: 0;
+}
 .submitBtn, .greenBtn{
-    margin: 1em 0;
+    margin: 1rem 0;
     height: 3em;
     width: 100%;
     border-radius: 8px;
