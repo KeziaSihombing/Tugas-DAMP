@@ -35,21 +35,16 @@
                 </div>
                 <a class="bTextTwo f500">Lupa kata sandi?</a>
             </form>
-            <input type="submit" value="Masuk" class="submitBtn bTextOne f600" onclick="beranda()">
+            <button class="submitBtn bTextOne f600"><a  class="bTextOne f600" href="./beranda.html">Masuk</a></button>
             <div class="lines">
                 <hr/>
                 <p style="margin: 0;">Atau</p>
                 <hr/>
             </div>
-            <button class="submitBtn googleBtn bTextTwo f500" onclick="beranda()">
+            <button class="submitBtn googleBtn">
                 <span><img src="/Images/icon/devicon_google.svg"></span>
-                Masuk dengan Google
+                <a class="bTextTwo f500" href="./beranda.html">Masuk dengan Google</a>
             </button>
-            <script>
-                function beranda(){
-                    location.replace("http://127.0.0.1:3000/HTML/beranda.html")
-                }
-            </script>
             <div class="masuk">
                 <p class="bTextTwo f400">Belum punya akun?</p>
                 <a href="./daftar.html" class="bTextTwo f500">Daftar</a>
