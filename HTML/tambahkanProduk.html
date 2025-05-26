@@ -4,10 +4,66 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title></title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="/CSS/daftarStyle.css">
+        <link rel="stylesheet" href="/CSS/tambahProduk.css"> 
     </head>
     <body>
-    
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+        <div class="header">
+            <a href="./detailMakanan.html"><button class="backBtn"><img src="/Images/icon/arrow up.svg"></button></a>
+            <p class="bTextOne f600">Tambahkan Produk</p>
+        </div>
+        <div class="desktop-header">
+            <div class="left">
+                <a href="./detailMakanan.html"><button class="backBtn"><img src="/Images/icon/arrow up.svg"></button></a>
+                <p class="bTextOne f600">Kembali</p>
+            </div>
+            <div class="right">
+                <a><button class="notifBtn"><img src="/Images/icon/notif.svg"></button></a>
+                <a><button class="chatBtn"><img src="/Images/icon/ant-design_message-outlined.svg"></button></a>
+                <a><button class="historyBtn"><img src="/Images/icon/material-symbols_history-rounded.svg"></button></a>
+            </div>        
+        </div>
+
+        <div class="container">
+            <h1 class="bTextOne f600">Unggah Makanan/Minumanmu!</h1>
+            <p class="bTextTwo f500" style="color: #888C9E; margin: 0.75em 0 0.85em 0;">Beri tahu kami tentang produkmu.</p>
+            <form action="./beranda.html">
+                <label for="name" class="bTextOne f500">Nama Produk</label><br/>
+                <input type="text" id="name" class="bTextTwo f400"><br/>
+
+                <label for="description" class="bTextOne f500">Deskripsi</label><br/>
+                <textarea id="description" cols="40" rows="6" class="bTextTwo f400 desc"></textarea><br/>
+
+                <label for="kategori" class="bTextOne f500">Kategori</label><br/>
+                <input type="radio" name="kategori" id="donasi" value="Donasi">
+                <label for="donasi" class="b500">Donasi</label><br/>
+                <input type="radio" name="kategori" id="jual" value="Jual">
+                <label for="jual" class="b500">Jual</label><br/>
+
+                <label for="price" class="bTextOne f500">Harga</label><br/>
+                <input type="text" id="price" class="bTextTwo f400"><br/>
+
+                <label for="exp" class="bTextOne f500">Waktu Kedaluarsa</label><br/>
+                <input type="text" id="exp" class="bTextTwo f400"><br/>
+
+                <label for="location" class="bTextOne f500">Lokasi</label><br/>
+                <input type="text" id="location" class="bTextTwo f400"><br/>
+
+                <label for="price" class="bTextOne f500">Harga</label><br/>
+                <input type="text" id="description" class="bTextTwo f400"><br/>
+
+                <label for="picture" class="bTextOne f500">Gambar Produk</label>
+                <div class="pic-container">
+                    <img src="/Images/unggah.png">
+                    <p class="bTextTwo f600">Format yang didukung: JPEG, PNG</p>
+                </div>     
+                
+                <input type="submit" value="Unggah Produk">
+            </form>
+        </div>    
     </body>
 </html>
