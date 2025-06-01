@@ -16,6 +16,7 @@ body{
     flex-direction: row;
     align-items: center;
     gap: 0.5em;
+    margin-left: 1em;
 }
 
 .header .right{
@@ -35,7 +36,7 @@ body{
 }
 
 .carousel { 
-    margin: 1.5em 1em;
+    margin: 1.5em 1em 0;
     overflow: hidden; 
     padding-bottom: 4rem; 
 }
@@ -75,6 +76,99 @@ body{
     display: none;
 }
 
+.input-group{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom:0.5em;
+    display: flex;
+    width: 90%;
+    padding: 0px 5px 0px 16px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 20px;
+    border: 0.5px solid #E5E6EE;
+}
+
+input{
+    border: none;  
+}
+
+.input-group-text{
+    border: none;
+    background-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.form-control{
+    border: none;
+    width: 100%;
+    height: 0.75em;
+    font-size: 0.75em;
+    margin: 0.75em 0;
+    padding-left: 0;
+}
+
+
+.points{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1.5em;
+    align-self: center;
+    display: inline-flex;
+    column-gap: 1em;
+    padding: 0.5em 2em;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+    border: 1px solid var(--Basic-Light-Grey, #E5E6EE);
+    background: #FFF;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+    margin: 0.5em 0;
+}
+
+.vertical-line{
+    width: 1px;
+    height: 35px;
+    border-right: 1px solid #E5E6EE;
+}
+
+.profile{
+    display: flex;
+    column-gap: 1em;
+}
+
+.profile img{
+    width: 2em;
+}
+
+.tempat{
+    display: flex;
+    column-gap: 0.1em;
+}
+
+.containers{
+    width: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1%;
+}
+
+.desktop-cards{
+    display: none;
+}
+
+.food-div{
+    margin: 0.7em 1em 1em;
+}
+
+.title{
+    display: flex;
+    justify-content: space-between;
+}
+
 
 
 @media screen and (min-width: 431px) {
@@ -82,12 +176,38 @@ body{
         justify-content: space-between;
         padding: 2.5em 2em 3.5em;
     }
+    .desktop-cards{
+        display: block;
+    }
+
+    .containers{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }
 
 @media screen and (min-width: 768px) {
     html{
         font-size: 20px;
     }
+
+    body:not(.header){
+        margin: 0 3em;
+    }
+
+    .header{
+        width: 100vw;
+        margin-left: -3em;
+        margin-right: -3em;
+    }
+
+    .header .left{
+        margin-left: 4em;
+    }
+
+    .header .right{
+        margin-right: 3em;
+    }
+
     .carousel-wrapper{
         justify-content: space-around;
     }
@@ -96,6 +216,15 @@ body{
     }
     .item-right{
         width: 8em;;
+    }
+
+    .points{
+        width: 70%;
+        justify-content:flex-start;
+    }
+
+    .profile:first-child{
+        margin-right: 25%;
     }
 }
 
@@ -107,7 +236,11 @@ body{
         gap: 2em;
     }
     .header .right img{
-        height: 2.5em;
+        height: 2em;
+    }
+
+    .header .left img{
+        height: 2em;
     }
 
     .carousel-wrapper{
@@ -123,4 +256,18 @@ body{
         flex-direction: column;
         align-items: center;
     }
+
+    .points{
+        width: 40%;
+        justify-content:space-evenly;
+    }
+
+    .profile:first-child{
+        margin-right: 0;
+    }
+
+    .carousel img{
+        width: 8em;
+    }
 }
+
