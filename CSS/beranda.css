@@ -1,0 +1,126 @@
+body{
+    margin-top: 0!important;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px 16px 16px 9px;
+    gap: 2em;
+    background: #FFF;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.header .left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.header .right{
+    display: flex;
+    flex-direction: row;
+    gap: 1.2em;
+}
+
+.header .right img{
+    height: 1.5em;
+}
+
+.backBtn, .notifBtn, .chatBtn, .historyBtn{
+    border: none;
+    background-color: transparent;
+    padding: 0;
+}
+
+.carousel { 
+    margin: 1.5em 1em;
+    overflow: hidden; 
+    padding-bottom: 4rem; 
+}
+.carousel-inner { overflow: visible; }
+.carousel-control-next, .carousel-control-prev { bottom: 4rem; }
+.carousel-indicators{
+    bottom: 1.5rem;
+}
+.carousel-indicators button{
+    background-color: #979393!important;
+    width: 2.5em!important;
+    height: 0.5em!important;
+    border-radius: 10px!important;
+    border: none!important;
+}
+
+.carousel-wrapper, .desktop-carousel-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #4AAD54;
+    border-radius: 8px;
+    color: white;
+    padding: 1.25em 1em;
+}
+
+.item-left button, .item-middle button{
+    border-radius: 4px;
+    background: #FFF;
+    padding: 0.5em 1.5em;
+    text-align: center;
+    border: none;
+    color: #4AAD54;
+}
+
+.desktop-carousel-wrapper{
+    display: none;
+}
+
+
+
+@media screen and (min-width: 431px) {
+    .carousel-wrapper{
+        justify-content: space-between;
+        padding: 2.5em 2em 3.5em;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    html{
+        font-size: 20px;
+    }
+    .carousel-wrapper{
+        justify-content: space-around;
+    }
+    .carousel-wrapper img{
+        width: 100%;
+    }
+    .item-right{
+        width: 8em;;
+    }
+}
+
+@media screen and (min-width: 933px) {
+    html{
+        font-size: 20px;
+    }
+    .header .right{
+        gap: 2em;
+    }
+    .header .right img{
+        height: 2.5em;
+    }
+
+    .carousel-wrapper{
+        display: none;
+    }
+
+    .desktop-carousel-wrapper{
+        display: flex;
+    }
+
+    .item-middle{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

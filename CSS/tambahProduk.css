@@ -54,6 +54,11 @@ body{
     margin-top: 1.25em;
     margin-bottom: 1.25em;
 }
+input[type="submit"]{
+    border-radius: 8px;
+    background-color: #4AAD54!important;
+    color: white;
+}
 
 input:not(input[type="radio"]), textarea{
     margin-top: 0.75em!important;
@@ -70,10 +75,47 @@ input:not(input[type="radio"]), textarea{
     box-sizing: border-box;
 }
 
+input[type="radio"]{
+    accent-color: green;
+    margin-left: 0;
+    margin-right: 0.5em;
+}
+
+#donasi{
+    margin-top: 0.65em;
+    margin-bottom: 0.5em;
+}
+
+#jual{
+    margin-bottom: 1em;
+}
+
+.pic-container{
+    margin-top: 0.75em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75em;
+    border-radius: 8px;
+    border: 1px dashed #4AAD54;
+    background: var(--Chateau-Green-50, #F3FAF3);
+    height: 10.75em;
+    color: #888C9E;
+}
+
+.radio-div{
+    display: flex;
+    flex-direction: column;
+}
+
 @media screen and (min-width: 431px) {
 }
 
 @media screen and (min-width: 933px) {
+    html{
+        font-size: 20px;
+    }
     body{
         margin: 0;
     }
@@ -85,4 +127,41 @@ input:not(input[type="radio"]), textarea{
     .desktop-header{
         display:flex;
     }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .col{
+        width: 41.2em;
+        margin-top: 1.5em;
+    }
+
+    .title{
+        text-align: center;
+    }
+
+    .radio-div{
+        display: flex;
+        flex-direction: row;
+        column-gap: 1.5em;
+        margin-bottom: 1em;
+    }
+
+    input[type="radio"]{
+        margin-top: 0!important;
+        margin-bottom: 0!important;
+    }
+
+    .product-div{
+        display: flex;
+        flex-direction: row;
+        column-gap: 2em;
+    }
+
+
+
 }
