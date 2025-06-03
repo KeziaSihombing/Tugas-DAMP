@@ -1,0 +1,190 @@
+* {
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+/* Header */
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.desktop-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px 16px 16px 9px;
+    gap: 2em;
+    background: #EDF7EE;
+    box-shadow: 0px -0.594px 0px 0px rgba(0, 0, 0, 0.05) inset, 0px 0.594px 0px 0px rgba(0, 0, 0, 0.15);
+}
+
+.desktop-header .left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.4em;
+}
+
+.desktop-header .right{
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+}
+
+.backBtn, .notifBtn, .chatBtn, .historyBtn{
+    border: none;
+    background-color: transparent;
+    padding: 0;
+}
+
+/* Kategori Label */
+.label {
+  padding: 1em;
+  text-align: left;
+}
+
+.kategori {
+  font-size: 1em;
+  font-weight: 600;
+  color: #4AAD54;
+  margin: 0;
+}
+
+/* Kontainer */
+.riwayat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 0 1em 2em;
+}
+
+.header-kecil{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Kartu Riwayat */
+.riwayat-card {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label memanjang atas */
+.riwayat-label {
+  width: 100%;
+  background-color: rgba(74, 173, 84, 0.1);
+  color: #4AAD54;
+  font-size: 0.8em;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.4em 0;
+  border-bottom: 1px solid rgba(74, 173, 84, 0.3);
+}
+
+/* Isi utama (gambar + info) horizontal */
+.riwayat-content {
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+  gap: 1em;
+}
+
+/* Gambar */
+.riwayat-content img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Info */
+.riwayat-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25em;
+}
+
+.riwayat-info h4 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.price {
+  font-size: 0.9em;
+  margin: 0;
+}
+
+.donasi {
+  color: #4AAD54;
+  font-weight: 600;
+}
+
+.lokasi {
+  font-size: 0.85em;
+  color: #888C9E;
+  margin: 0;
+}
+
+.riwayat-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+/* Responsif */
+    .desktop-header {
+  display: none;
+}
+
+    .header-kecil{
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+
+
+  .header{
+    display: none;
+  }
+
+  .desktop-header{
+    display:flex;
+  }
+
+  .riwayat-container {
+    padding: 1em 5%;
+  }
+
+  .riwayat-card img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .riwayat-info h4 {
+    font-size: 1.1em;
+  }
+
+  .price {
+    font-size: 1em;
+  }
+
+  .lokasi {
+    font-size: 0.9em;
+  }
+}

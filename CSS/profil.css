@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+/* Header mengikuti style daftarMakanan */
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.desktop-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px 16px 16px 9px;
+    gap: 2em;
+    background: #EDF7EE;
+    box-shadow: 0px -0.594px 0px 0px rgba(0, 0, 0, 0.05) inset, 0px 0.594px 0px 0px rgba(0, 0, 0, 0.15);
+}
+
+.desktop-header .left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.4em;
+}
+
+.desktop-header .right{
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+}
+
+.backBtn, .notifBtn, .chatBtn, .historyBtn{
+    border: none;
+    background-color: transparent;
+    padding: 0;
+}
+
+.desktop-header{
+    display: none;
+}
+
+/* Profil */
+.profil-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5em;
+  gap: 1em;
+}
+
+.avatar-wrapper {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.nama {
+  font-weight: 600;
+  font-size: 1.1em;
+  margin: 0;
+}
+
+.email {
+  font-size: 0.9em;
+  color: #888C9E;
+  margin-bottom: 1em;
+}
+
+/* Box info */
+.info-box {
+  width: 100%;
+  max-width: 400px;
+  background-color: #F6F6F6;
+  border-radius: 12px;
+  padding: 1em;
+  text-align: left;
+}
+
+.label {
+  font-size: 0.8em;
+  color: #888C9E;
+  margin-bottom: 0.3em;
+}
+
+.value {
+  font-weight: 600;
+  font-size: 1em;
+  color: #333;
+  margin: 0;
+}
+
+/* Tombol aksi */
+.action-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 1em;
+}
+
+.gray-btn {
+  padding: 0.75em;
+  background-color: #E5E6EE;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  color: #333;
+}
+
+.red-btn {
+  padding: 0.75em;
+  background-color: #FFD1D1;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  color: #C62828;
+}
+
+/* Tombol utama */
+.green-btn {
+  margin-top: 2em;
+  padding: 0.9em 2em;
+  background-color: #4AAD54;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+/* Desktop */
+@media screen and (min-width: 764px) {
+    .desktop-header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 16px 16px 16px 9px;
+        gap: 2em;
+        background: #EDF7EE;
+        box-shadow: 0px -0.594px 0px 0px rgba(0, 0, 0, 0.05) inset, 0px 0.594px 0px 0px rgba(0, 0, 0, 0.15);
+    }
+
+    .desktop-header .left{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.4em;
+    }
+
+    .desktop-header .right{
+        display: flex;
+        flex-direction: row;
+        gap: 2em;
+    }
+
+    .backBtn, .notifBtn, .chatBtn, .historyBtn{
+        border: none;
+        background-color: transparent;
+        padding: 0;
+    }
+
+  .profil-container {
+    padding: 2em 10%;
+  }
+}

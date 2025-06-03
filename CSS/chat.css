@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+/* Header */
+.desktop-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px 16px 16px 9px;
+    gap: 2em;
+    background: #EDF7EE;
+    box-shadow: 0px -0.594px 0px 0px rgba(0, 0, 0, 0.05) inset, 0px 0.594px 0px 0px rgba(0, 0, 0, 0.15);
+}
+
+.desktop-header .left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.4em;
+}
+
+.desktop-header .right{
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+}
+
+.backBtn, .notifBtn, .chatBtn, .historyBtn{
+    border: none;
+    background-color: transparent;
+    padding: 0;
+}
+
+.chat-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    padding: 16px;
+    gap: 2em;
+}
+
+.backBtn {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.chat-header .chat-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-name {
+  font-weight: 600;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.chat-status {
+  font-size: 0.8rem;
+  color: #4AAD54;
+  margin: 0;
+}
+
+/* Chat Area */
+.chat-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/* Chat Bubble */
+.chat-bubble {
+  max-width: 70%;
+  padding: 0.75em 1em;
+  border-radius: 16px;
+  font-size: 0.9em;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.chat-bubble.left {
+  background-color: #F1F1F1;
+  align-self: flex-start;
+}
+
+.chat-bubble.right {
+  background-color: #DFF6DD;
+  align-self: flex-end;
+}
+
+/* Input Area */
+.chat-input-area {
+  display: flex;
+  padding: 0.75em 1em;
+  gap: 0.5em;
+  border-top: 1px solid #eee;
+  background-color: #fff;
+}
+
+.chat-input-area input {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 0.5em 1em;
+  font-size: 1em;
+}
+
+.sendBtn {
+  border: none;
+  background-color: transparent;
+  padding: 0.25em;
+}
+
+.desktop-header{
+    display: none;
+}
+
+/* Desktop Responsiveness */
+@media screen and (min-width: 768px) {
+.desktop-header{
+    display: flex;
+}
+  .chat-container {
+    padding: 2em 10%;
+  }
+
+  .chat-header,
+  .chat-input-area {
+    padding: 1em 10%;
+  }
+
+  .chat-bubble {
+    font-size: 1em;
+  }
+}
