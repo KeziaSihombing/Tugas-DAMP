@@ -1,178 +1,237 @@
-* {
-  box-sizing: border-box;
-  font-family: "Plus Jakarta Sans", sans-serif;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #fff;
-}
-
-/* Header mengikuti style daftarMakanan */
-.desktop-header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 16px 16px 16px 9px;
-    gap: 2em;
-    background: #EDF7EE;
-    box-shadow: 0px -0.594px 0px 0px rgba(0, 0, 0, 0.05) inset, 0px 0.594px 0px 0px rgba(0, 0, 0, 0.15);
-}
-
-.desktop-header .left{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.4em;
-}
-
-.desktop-header .right{
-    display: flex;
-    flex-direction: row;
-    gap: 2em;
-}
-
-.backBtn, .notifBtn, .chatBtn, .historyBtn{
-    border: none;
-    background-color: transparent;
+/* Reset dan Font Dasar */
+body, html {
+    margin: 0;
     padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #FFFFFF; /* Latar belakang putih untuk mobile */
+    color: #333333;
 }
 
-.desktop-header{
-    display: none;
+/* Header Aplikasi Desktop */
+/* Desktop Header (dari CSS Anda, tetap disembunyikan di mobile) */
+.desktop-header {
+  display: none; /* Default disembunyikan, diatur oleh media query Anda */
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 16px 16px 16px 9px;
+  gap: 2em;
+  background: #EDF7EE;
+  box-shadow: 0px -0.594px 0px 0px rgba(0, 0, 0, 0.05) inset, 0px 0.594px 0px 0px rgba(0, 0, 0, 0.15);
 }
 
-/* Profil */
-.profil-container {
+.desktop-header .left {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  padding: 1.5em;
-  gap: 1em;
+  gap: 0.4em;
 }
 
-.avatar-wrapper {
-  width: 100px;
-  height: 100px;
-  border-radius: 100%;
-  overflow: hidden;
-}
-
-.avatar {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.nama {
-  font-weight: 600;
-  font-size: 1.1em;
-  margin: 0;
-}
-
-.email {
-  font-size: 0.9em;
-  color: #888C9E;
-  margin-bottom: 1em;
-}
-
-/* Box info */
-.info-box {
-  width: 100%;
-  max-width: 400px;
-  background-color: #F6F6F6;
-  border-radius: 12px;
-  padding: 1em;
-  text-align: left;
-}
-
-.label {
-  font-size: 0.8em;
-  color: #888C9E;
-  margin-bottom: 0.3em;
-}
-
-.value {
-  font-weight: 600;
-  font-size: 1em;
-  color: #333;
-  margin: 0;
-}
-
-/* Tombol aksi */
-.action-btns {
+.desktop-header .right {
   display: flex;
-  flex-direction: column;
-  gap: 0.75em;
-  width: 100%;
-  max-width: 400px;
-  margin-top: 1em;
+  flex-direction: row;
+  gap: 2em;
 }
 
-.gray-btn {
-  padding: 0.75em;
-  background-color: #E5E6EE;
+.backBtn, .notifBtn, .chatBtn, .historyBtn { /* .backBtn sudah ada di atas, ini untuk tombol lain di desktop header */
   border: none;
-  border-radius: 10px;
-  font-weight: 500;
-  color: #333;
+  background-color: transparent;
+  padding: 0;
 }
 
-.red-btn {
-  padding: 0.75em;
-  background-color: #FFD1D1;
-  border: none;
-  border-radius: 10px;
-  font-weight: 500;
-  color: #C62828;
+
+/* Kontainer Utama Halaman Profil */
+.profile-page-container {
+    position: relative; /* Untuk positioning .profile-header-green-bg */
+    padding-bottom: 90px; /* Ruang untuk tombol 'Unggah Produk' yang fixed di mobile */
 }
 
-/* Tombol utama */
-.green-btn {
-  margin-top: 2em;
-  padding: 0.9em 2em;
-  background-color: #4AAD54;
-  border: none;
-  border-radius: 12px;
-  color: white;
-  font-weight: 600;
-  font-size: 1em;
+/* Latar Belakang Hijau Melengkung */
+.profile-header-green-bg {
+    background-color: #4CAF50;
+    height: 180px;
+    width: 100%; /* Membuatnya 100% lebar dari elemen induk */
+    border-bottom-left-radius: 45px; /* Untuk lengkungan bawah kiri */
+    border-bottom-right-radius: 45px; /* Untuk lengkungan bawah kanan */
+    position: absolute; /* Untuk mobile agar bisa ditumpuk */
+    top: 0;
+    left: 0;
+    z-index: 0;
 }
 
-/* Desktop */
-@media screen and (min-width: 764px) {
-    .desktop-header{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 16px 16px 16px 9px;
-        gap: 2em;
-        background: #EDF7EE;
-        box-shadow: 0px -0.594px 0px 0px rgba(0, 0, 0, 0.05) inset, 0px 0.594px 0px 0px rgba(0, 0, 0, 0.15);
+/* Konten Utama Profil */
+.profile-main-content {
+    position: relative;
+    z-index: 1;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* Bagian Foto Profil */
+.profile-picture-section {
+    /* Avatar akan diposisikan dengan margin negatif untuk overlap */
+    padding-top: 110px; /* Sesuaikan agar avatar turun sedikit dari atas green-bg, (tinggi green bg - setengah tinggi avatar - sedikit space) */
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #FFFFFF;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* Margin atas negatif untuk overlap sudah tidak diperlukan jika padding-top di .profile-picture-section diatur */
+}
+
+.profile-name {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-top: 16px;
+    margin-bottom: 30px;
+}
+
+/* Grup Detail (Detail Profil & Preferences) */
+.profile-details-group {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.section-title {
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #666666; /* Abu-abu untuk judul seksi */
+    margin-bottom: 15px;
+    padding-left: 4px; /* Sedikit indentasi */
+}
+
+.info-item, .preference-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 4px; /* Padding vertikal lebih besar */
+    border-bottom: 1px solid #F0F0F0; /* Garis pemisah tipis */
+    text-decoration: none;
+    color: inherit;
+}
+.info-item:last-child, .preference-item:last-child {
+    border-bottom: none;
+}
+
+
+.info-icon, .pref-icon {
+    color: #757575; /* Warna ikon netral */
+    margin-right: 16px;
+    font-size: 22px; /* Ukuran ikon */
+}
+
+.info-label {
+    font-size: 1em;
+    color: #333333;
+    font-weight: 500;
+}
+
+.info-value {
+    margin-left: auto;
+    font-size: 1em;
+    color: #555555;
+    font-weight: 500;
+}
+
+.pref-label {
+    font-size: 1em;
+    color: #333333;
+    font-weight: 500;
+    flex-grow: 1; /* Agar label mengisi ruang */
+}
+
+.pref-arrow {
+    color: #AAAAAA; /* Warna panah abu-abu */
+    font-size: 24px; /* Ukuran ikon panah */
+}
+
+.logout-item .pref-icon,
+.logout-item .pref-label {
+    color: #D32F2F; /* Warna merah untuk logout */
+}
+
+/* Tombol Aksi di Footer */
+.profile-footer-action {
+    position: fixed; /* Tetap di bawah pada tampilan mobile */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px 20px;
+    background-color: #FFFFFF; /* Agar tidak transparan di atas konten lain */
+    border-top: 1px solid #E0E0E0; /* Garis pemisah jika diperlukan */
+}
+
+.upload-product-button {
+    width: 100%;
+    background-color: #4CAF50; /* Hijau */
+    color: #FFFFFF;
+    border: none;
+    padding: 14px 20px;
+    font-size: 1.05em;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.upload-product-button:hover {
+    background-color: #43A047; /* Hijau sedikit lebih gelap saat hover */
+}
+
+
+/* Desktop Styles (min-width: 768px) */
+@media screen and (min-width: 768px) {
+    body {
+        background-color: #F5F5F5; /* Latar belakang abu-abu muda untuk desktop */
     }
 
-    .desktop-header .left{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 0.4em;
+    .desktop-header {
+        display: flex; /* Tampilkan header desktop */
     }
 
-    .desktop-header .right{
-        display: flex;
-        flex-direction: row;
-        gap: 2em;
+    .profile-page-container { /* Pastikan ini ada untuk membungkus header hijau */
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #FFFFFF;
+        position: relative; /* Penting agar elemen anak bisa diatur relatif terhadap ini */
+        /* padding-top: 0; */ /* Agar .profile-header-green-bg mulai dari atas container */
     }
 
-    .backBtn, .notifBtn, .chatBtn, .historyBtn{
-        border: none;
-        background-color: transparent;
-        padding: 0;
+    .profile-header-green-bg {
+        position: relative; /* Diubah dari absolute agar mengikuti alur normal di dalam .profile-page-container */
+        width: 100%; /* PASTIKAN INI ADA: 100% dari .profile-page-container */
+        height: 180px; /* PASTIKAN INI ADA atau diwarisi dengan benar */
+        border-bottom-left-radius: 45px; /* PASTIKAN INI ADA untuk lengkungan */
+        border-bottom-right-radius: 45px; /* PASTIKAN INI ADA untuk lengkungan */
+        /* Pastikan tidak ada properti lain yang menghilangkan border-radius, contoh: border-radius: 0; */
     }
 
-  .profil-container {
-    padding: 2em 10%;
-  }
+    .profile-main-content {
+        padding: 0 40px; /* Padding horizontal lebih besar di desktop */
+    }
+
+    .profile-picture-section {
+         padding-top: 0; /* Reset padding-top */
+    }
+    .profile-avatar {
+        margin-top: -60px; /* Tarik avatar ke atas untuk overlap dengan green-bg */
+    }
+
+
+    .profile-footer-action {
+        position: static; /* Tidak lagi fixed di desktop */
+        padding: 30px 40px; /* Padding normal */
+        border-top: none;
+        text-align: center; /* Tengahkankan tombol */
+    }
+
+    .upload-product-button {
+        width: auto; /* Lebar otomatis sesuai konten */
+        min-width: 250px; /* Lebar minimum tombol */
+        padding: 14px 30px;
+    }
 }

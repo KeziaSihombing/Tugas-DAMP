@@ -1,3 +1,4 @@
+/* Style dasar dari file Anda */
 * {
   box-sizing: border-box;
   font-family: "Plus Jakarta Sans", sans-serif;
@@ -9,43 +10,74 @@ body {
   background-color: #fff;
 }
 
-/* Header */
-.header{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+/* Header Mobile - Modifikasi dari .header Anda */
+.riwayat-page-header { /* Menggunakan class spesifik untuk menghindari konflik jika .header dipakai umum */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px; /* Padding standar */
+  background-color: #fff;
+  border-bottom: 1px solid #E0E0E0; /* Garis pemisah tipis */
 }
 
-.desktop-header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 16px 16px 16px 9px;
-    gap: 2em;
-    background: #EDF7EE;
-    box-shadow: 0px -0.594px 0px 0px rgba(0, 0, 0, 0.05) inset, 0px 0.594px 0px 0px rgba(0, 0, 0, 0.15);
+.riwayat-page-header .back-link-riwayat {
+  margin-right: 16px; /* Jarak antara tombol kembali dan judul */
 }
 
-.desktop-header .left{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.4em;
+.riwayat-page-header .backBtn {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  display: flex; /* Untuk alignment ikon jika perlu */
+  align-items: center;
+  justify-content: center;
 }
 
-.desktop-header .right{
-    display: flex;
-    flex-direction: row;
-    gap: 2em;
+.riwayat-page-header .backBtn img {
+  width: 24px;
+  height: 24px;
 }
 
-.backBtn, .notifBtn, .chatBtn, .historyBtn{
-    border: none;
-    background-color: transparent;
-    padding: 0;
+.riwayat-page-header .header-title-riwayat {
+  font-size: 1.15em; /* Sedikit lebih besar */
+  font-weight: 600;
+  color: #333;
+  margin: 0; /* Hapus margin default dari <p> */
 }
 
-/* Kategori Label */
+
+/* Desktop Header (dari CSS Anda, tetap disembunyikan di mobile) */
+.desktop-header {
+  display: none; /* Default disembunyikan, diatur oleh media query Anda */
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 16px 16px 16px 9px;
+  gap: 2em;
+  background: #EDF7EE;
+  box-shadow: 0px -0.594px 0px 0px rgba(0, 0, 0, 0.05) inset, 0px 0.594px 0px 0px rgba(0, 0, 0, 0.15);
+}
+
+.desktop-header .left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.desktop-header .right {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
+
+.backBtn, .notifBtn, .chatBtn, .historyBtn { /* .backBtn sudah ada di atas, ini untuk tombol lain di desktop header */
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Kategori Label LAMA - Tidak digunakan untuk tampilan target */
+/*
 .label {
   padding: 1em;
   text-align: left;
@@ -57,33 +89,78 @@ body {
   color: #4AAD54;
   margin: 0;
 }
+*/
 
-/* Kontainer */
+/* Tab Navigasi BARU */
+.riwayat-tabs-container {
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  padding-top: 8px; /* Sedikit padding atas */
+  /* padding-bottom: 0; Tidak perlu jika border tab yg aktif akan jadi pemisah */
+  border-bottom: 1px solid #E0E0E0; /* Garis pemisah tipis di bawah area tab */
+}
+
+.riwayat-tab-btn {
+  background: none;
+  border: none;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 0.95em; /* Ukuran font tab */
+  color: #888C9E; /* Warna teks tab non-aktif */
+  font-weight: 500;
+  flex-grow: 1;
+  text-align: center;
+  position: relative;
+}
+
+.riwayat-tab-btn.active {
+  color: #4AAD54; /* Warna teks tab aktif (hijau) */
+  font-weight: 600;
+}
+
+.riwayat-tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; /* Agar menutupi border-bottom dari .riwayat-tabs-container */
+  left: 0; /* Lebarkan ke ujung kiri tab */
+  right: 0; /* Lebarkan ke ujung kanan tab */
+  height: 3px;
+  background-color: #4AAD54;
+  border-radius: 1.5px; /* Sedikit melengkung di ujung garis */
+}
+
+
+/* Kontainer Riwayat (dari CSS Anda) */
 .riwayat-container {
   display: flex;
   flex-direction: column;
-  gap: 1em;
-  padding: 0 1em 2em;
+  gap: 12px; /* Mengurangi gap sedikit dari 1em */
+  padding: 16px; /* Padding konsisten */
+  background-color: #fff; /* Latar belakang utama halaman di bawah tab */
 }
 
-.header-kecil{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+/* header-kecil (dari CSS Anda, disembunyikan di mobile) */
+.header-kecil {
+  display: none; /* Default disembunyikan, diatur oleh media query Anda */
+  flex-direction: row;
+  align-items: center;
 }
 
-/* Kartu Riwayat */
+/* Kartu Riwayat - Modifikasi */
 .riwayat-card {
-  background-color: #fff;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+  background-color: #F0F7F2; /* Latar belakang hijau muda sesuai gambar target */
+  border: none; /* Menghilangkan border lama */
+  border-radius: 10px; /* Radius sesuai gambar target */
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.03); */ /* Shadow bisa dihilangkan atau disesuaikan */
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  padding: 12px; /* Padding di dalam card */
 }
 
-/* Label memanjang atas */
+/* Label memanjang atas LAMA - Tidak digunakan */
+/*
 .riwayat-label {
   width: 100%;
   background-color: rgba(74, 173, 84, 0.1);
@@ -94,42 +171,76 @@ body {
   padding: 0.4em 0;
   border-bottom: 1px solid rgba(74, 173, 84, 0.3);
 }
+*/
 
-/* Isi utama (gambar + info) horizontal */
+/* Header Toko/Warung di dalam Card BARU */
+.riwayat-store-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Jarak ke konten produk */
+}
+
+.person-icon-list {
+  color: #555;
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+.store-name {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Isi utama (gambar + info) horizontal - Modifikasi dari .riwayat-content Anda */
 .riwayat-content {
   display: flex;
   flex-direction: row;
-  padding: 1em;
-  gap: 1em;
+  /* padding: 1em; */ /* Padding sudah di .riwayat-card */
+  gap: 12px; /* Gap antara gambar dan info */
+  align-items: flex-start; /* Agar teks mulai dari atas jika gambar lebih tinggi */
 }
 
-/* Gambar */
-.riwayat-content img {
-  width: 80px;
-  height: 80px;
+/* Gambar Produk - Modifikasi dari .riwayat-content img */
+.product-img-riwayat { /* Class baru untuk spesifisitas */
+  width: 60px; /* Ukuran gambar sesuai target */
+  height: 60px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px; /* Radius gambar */
+  /* border: 1px solid #E0E0E0; */ /* Opsional: border tipis pada gambar */
 }
 
-/* Info */
+/* Info Produk - Modifikasi dari .riwayat-info Anda */
 .riwayat-info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 0.25em;
+  justify-content: flex-start; /* Mulai dari atas */
+  gap: 4px; /* Jarak antar teks info */
+  flex-grow: 1; /* Agar mengambil sisa ruang */
 }
 
-.riwayat-info h4 {
+.riwayat-info .product-name-text { /* Class baru */
   margin: 0;
   font-size: 1em;
   font-weight: 600;
+  color: #333;
 }
 
-.price {
-  font-size: 0.9em;
+.riwayat-info .price-text { /* Class baru */
+  font-size: 0.95em;
+  margin: 0;
+  color: #333;
+  font-weight: 500; /* Sedikit tebal untuk harga */
+}
+
+.riwayat-info .date-text { /* Class baru */
+  font-size: 0.8em;
+  color: #757575; /* Warna abu-abu untuk tanggal */
   margin: 0;
 }
 
+/* Style lama untuk harga dan lokasi yang mungkin tidak terpakai lagi */
+/*
 .donasi {
   color: #4AAD54;
   font-weight: 600;
@@ -140,51 +251,50 @@ body {
   color: #888C9E;
   margin: 0;
 }
+*/
 
+/* .riwayat-card img dari CSS Anda, mungkin sudah tercakup oleh .product-img-riwayat */
+/*
 .riwayat-card img {
   width: 100px;
   height: 100px;
   object-fit: cover;
 }
+*/
 
-/* Responsif */
-    .desktop-header {
-  display: none;
-}
-
-    .header-kecil{
-  display: none;
-}
-
+/* Responsif (dari CSS Anda) */
 @media screen and (min-width: 768px) {
-
-
-  .header{
+  .header.riwayat-page-header { /* Sembunyikan header mobile di desktop */
     display: none;
   }
 
-  .desktop-header{
-    display:flex;
+  .desktop-header {
+    display: flex; /* Tampilkan header desktop */
+  }
+
+  .riwayat-tabs-container { /* Styling tab di desktop jika perlu penyesuaian */
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
   .riwayat-container {
     padding: 1em 5%;
   }
 
-  .riwayat-card img {
-    width: 100px;
-    height: 100px;
+  .product-img-riwayat { /* Ukuran gambar produk di desktop jika beda */
+    width: 70px; /* Contoh sedikit lebih besar */
+    height: 70px;
   }
 
-  .riwayat-info h4 {
-    font-size: 1.1em;
+  .riwayat-info .product-name-text {
+    font-size: 1.05em;
   }
 
-  .price {
+  .riwayat-info .price-text {
     font-size: 1em;
   }
 
-  .lokasi {
-    font-size: 0.9em;
+  .riwayat-info .date-text {
+    font-size: 0.85em;
   }
 }

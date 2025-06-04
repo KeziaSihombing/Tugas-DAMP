@@ -4,51 +4,67 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Riwayat</title>
-  <link rel="stylesheet" href="../CSS/daftarStyle.css" />
-  <link rel="stylesheet" href="../CSS/riwayat.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../CSS/daftarStyle.css" /> <link rel="stylesheet" href="../CSS/riwayat.css" />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
-</head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> </head>
 <body>
-  <!-- Header -->
-        <div class="header">
-            <a href="./beranda.html"><button class="backBtn"><img src="../Images/icon/arrow up.svg"></button></a>
-            <p class="bTextOne f600">Riwayat</p>
-        </div>
-        <div class="desktop-header">
-            <div class="left">
-                <a href="./beranda.html"><button class="backBtn"><img src="../Images/icon/arrow up.svg"></button></a>
-                <p class="bTextOne f600">Kembali</p>
-            </div>
-            <div class="right">
-                <button class="notifBtn"><img src="../Images/icon/notif.svg"></button>
-                <button class="chatBtn"><img src="../Images/icon/ant-design_message-outlined.svg"></button>
-                <button class="historyBtn"><img src="../Images/icon/material-symbols_history-rounded.svg"></button>
-            </div>        
-        </div>
-
-  <!-- Label Kategori -->
-  <div class="label">
-    <p class="kategori">Penerima</p>
+  <div class="header riwayat-page-header"> <a href="./beranda.html" class="back-link-riwayat">
+      <button class="backBtn">
+        <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M15.41%207.41L14%206L8%2012L14%2018L15.41%2016.59L10.83%2012L15.41%207.41Z%22%20fill%3D%22%23333333%22/%3E%3C/svg%3E" alt="Kembali">
+      </button>
+    </a>
+    <p class="bTextOne f600 header-title-riwayat">Riwayat</p>
   </div>
 
-  <!-- Konten Riwayat -->
+  <div class="desktop-header">
+    <div class="left">
+      <a href="./beranda.html"><button class="backBtn"><img src="../Images/icon/arrow up.svg"></button></a>
+      <p class="bTextOne f600">Kembali</p>
+    </div>
+    <div class="right">
+      <button class="notifBtn"><img src="../Images/icon/notif.svg"></button>
+      <button class="chatBtn"><img src="../Images/icon/ant-design_message-outlined.svg"></button>
+      <button class="historyBtn"><img src="../Images/icon/material-symbols_history-rounded.svg"></button>
+    </div>
+  </div>
+
+  <div class="riwayat-tabs-container">
+    <button class="riwayat-tab-btn active">Penerima</button>
+    <button class="riwayat-tab-btn">Pengirim</button>
+  </div>
+
   <div class="riwayat-container">
-        <div class = "header-kecil">
-            <a href="./beranda.html"><button class="backBtn"><img src="../Images/icon/arrow up.svg"></button></a>
-            <p class="bTextOne f600">Riwayat</p>
+    <div class="riwayat-card">
+      <div class="riwayat-store-header">
+        <span class="material-icons person-icon-list">person</span>
+        <span class="store-name">Kedai Pak Haji</span>
+      </div>
+      <div class="riwayat-content">
+        <img src="https://via.placeholder.com/60x60.png?text=Roti" alt="Roti Tawar" class="product-img-riwayat"> <div class="riwayat-info">
+          <h4 class="product-name-text">Roti Tawar</h4>
+          <p class="price-text">Rp10.000</p>
+          <p class="date-text">Diterima pada 18 Maret 2024</p>
         </div>
-        <div class="riwayat-card">
-        <div class="riwayat-label">Penerima</div>
-        <div class="riwayat-content">
-            <img src="../Images/food1.jpg" alt="Sambal Teri">
-            <div class="riwayat-info">
-            <h4>Sambal Teri</h4>
-            <p class="price">Rp0 - <span class="donasi">Donasi</span></p>
-            <p class="lokasi">Lowokwaru, 10 jam lalu</p>
-            </div>
+      </div>
+    </div>
+
+    <div class="riwayat-card">
+      <div class="riwayat-store-header">
+        <span class="material-icons person-icon-list">person</span>
+        <span class="store-name">Warung Bu Lilik</span>
+      </div>
+      <div class="riwayat-content">
+        <img src="https://via.placeholder.com/60x60.png?text=Sambal" alt="Sambal Teri" class="product-img-riwayat"> <div class="riwayat-info">
+          <h4 class="product-name-text">Sambal Teri</h4>
+          <p class="price-text">Rp0</p> <p class="date-text">Diterima pada 16 Maret 2024</p>
         </div>
-        </div>
+      </div>
+    </div>
+
+     <div class = "header-kecil">
+        <a href="./beranda.html"><button class="backBtn"><img src="../Images/icon/arrow up.svg"></button></a>
+        <p class="bTextOne f600">Riwayat</p>
+    </div>
   </div>
 </body>
 </html>
