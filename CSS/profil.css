@@ -186,52 +186,79 @@ body, html {
 /* Desktop Styles (min-width: 768px) */
 @media screen and (min-width: 768px) {
     body {
-        background-color: #F5F5F5; /* Latar belakang abu-abu muda untuk desktop */
+        background-color: #F5F5F5; /* Latar belakang abu-abu untuk area di luar konten utama */
     }
 
-    .desktop-header {
-        display: flex; /* Tampilkan header desktop */
+    .desktop-app-header {
+        display: flex; /* Header ini sudah full-width by default */
+        /* ... (style header desktop lainnya tidak perlu diubah untuk permintaan ini) ... */
     }
 
-    .profile-page-container { /* Pastikan ini ada untuk membungkus header hijau */
-        max-width: 600px;
-        margin: 0 auto;
-        background-color: #FFFFFF;
-        position: relative; /* Penting agar elemen anak bisa diatur relatif terhadap ini */
-        /* padding-top: 0; */ /* Agar .profile-header-green-bg mulai dari atas container */
+    .profile-page-container {
+        /* HAPUS atau komentari max-width dan margin auto */
+        /* max-width: 600px; */
+        /* margin: 0 auto; */
+
+        width: 100%; /* Membuat kontainer utama mengambil lebar penuh */
+        background-color: #FFFFFF; /* Latar belakang putih untuk kontainer utama */
+        padding-bottom: 40px;
+        position: relative; /* Jika sudah ada, biarkan */
+        /* Pertimbangkan untuk menghapus box-shadow dan border-radius jika tidak cocok untuk full-width */
+        /* box-shadow: 0 0 15px rgba(0,0,0,0.05); */
+        /* border-radius: 0 0 8px 8px; */
     }
 
     .profile-header-green-bg {
-        position: relative; /* Diubah dari absolute agar mengikuti alur normal di dalam .profile-page-container */
-        width: 100%; /* PASTIKAN INI ADA: 100% dari .profile-page-container */
-        height: 180px; /* PASTIKAN INI ADA atau diwarisi dengan benar */
-        border-bottom-left-radius: 45px; /* PASTIKAN INI ADA untuk lengkungan */
-        border-bottom-right-radius: 45px; /* PASTIKAN INI ADA untuk lengkungan */
-        /* Pastikan tidak ada properti lain yang menghilangkan border-radius, contoh: border-radius: 0; */
+        position: relative;
+        width: 100%; /* Ini akan otomatis menjadi 100% dari .profile-page-container yang baru */
+        height: 180px;
+        border-bottom-left-radius: 45px;
+        border-bottom-right-radius: 45px;
+        /* background-color sudah diatur */
     }
 
     .profile-main-content {
-        padding: 0 40px; /* Padding horizontal lebih besar di desktop */
+        position: relative;
+        z-index: 1;
+        /* Padding kiri kanan agar konten tidak menempel ke tepi browser */
+        padding-left: 40px;
+        padding-right: 40px;
+        text-align: center; /* Untuk membantu centering elemen seperti nama */
     }
 
-    .profile-picture-section {
-         padding-top: 0; /* Reset padding-top */
-    }
     .profile-avatar {
-        margin-top: -60px; /* Tarik avatar ke atas untuk overlap dengan green-bg */
+        /* ... (style avatar Anda, termasuk margin-top: -60px untuk overlap) ... */
+        display: block; /* Untuk penggunaan margin auto */
+        margin-left: auto;
+        margin-right: auto; /* Menjaga avatar tetap di tengah */
     }
+
+    .profile-name {
+        /* text-align: center; */ /* Sudah di-handle oleh .profile-main-content atau bisa eksplisit */
+        /* ... (style nama lainnya) ... */
+    }
+
+    .profile-details-group {
+        text-align: left; /* Konten di dalam grup ini rata kiri */
+        max-width: 520px; /* BATASI lebar maksimum untuk grup detail agar tidak terlalu lebar */
+        margin-left: auto;   /* Tengahkankan grup detail ini di dalam .profile-main-content */
+        margin-right: auto;  /* Tengahkankan grup detail ini di dalam .profile-main-content */
+        margin-bottom: 30px; /* Seperti sebelumnya */
+    }
+    /* .section-title, .info-item, .preference-item di dalamnya akan mengikuti lebar .profile-details-group */
 
 
     .profile-footer-action {
-        position: static; /* Tidak lagi fixed di desktop */
-        padding: 30px 40px; /* Padding normal */
-        border-top: none;
-        text-align: center; /* Tengahkankan tombol */
+        position: static; /* Tidak lagi fixed */
+        padding-top: 30px; /* Sesuaikan padding jika perlu */
+        padding-bottom: 30px;
+        /* padding-left dan padding-right mengikuti .profile-main-content */
+        text-align: center; /* Menjaga tombol di tengah */
     }
 
     .upload-product-button {
-        width: auto; /* Lebar otomatis sesuai konten */
-        min-width: 250px; /* Lebar minimum tombol */
-        padding: 14px 30px;
+        width: auto; /* Lebar tombol menyesuaikan kontennya */
+        min-width: 250px; /* Lebar minimum untuk tombol */
+        /* ... (style tombol lainnya) ... */
     }
 }
