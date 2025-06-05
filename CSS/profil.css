@@ -163,6 +163,7 @@ body, html {
     padding: 16px 20px;
     background-color: #FFFFFF; /* Agar tidak transparan di atas konten lain */
     border-top: 1px solid #E0E0E0; /* Garis pemisah jika diperlukan */
+    z-index: 100;
 }
 
 .upload-product-button {
@@ -176,6 +177,7 @@ body, html {
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.2s;
+    z-index: 100;
 }
 
 .upload-product-button:hover {
@@ -189,7 +191,7 @@ body, html {
         background-color: #F5F5F5; /* Latar belakang abu-abu untuk area di luar konten utama */
     }
 
-    .desktop-app-header {
+    .desktop-header {
         display: flex; /* Header ini sudah full-width by default */
         /* ... (style header desktop lainnya tidak perlu diubah untuk permintaan ini) ... */
     }
@@ -209,12 +211,8 @@ body, html {
     }
 
     .profile-header-green-bg {
-        position: relative;
-        width: 100%; /* Ini akan otomatis menjadi 100% dari .profile-page-container yang baru */
-        height: 180px;
-        border-bottom-left-radius: 45px;
-        border-bottom-right-radius: 45px;
-        /* background-color sudah diatur */
+
+        display: flex;
     }
 
     .profile-main-content {
@@ -231,11 +229,6 @@ body, html {
         display: block; /* Untuk penggunaan margin auto */
         margin-left: auto;
         margin-right: auto; /* Menjaga avatar tetap di tengah */
-    }
-
-    .profile-name {
-        /* text-align: center; */ /* Sudah di-handle oleh .profile-main-content atau bisa eksplisit */
-        /* ... (style nama lainnya) ... */
     }
 
     .profile-details-group {

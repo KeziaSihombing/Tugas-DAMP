@@ -1,4 +1,6 @@
-/* Style dasar dari file Anda */
+/* riwayat.css */
+
+/* Style dasar */
 * {
   box-sizing: border-box;
   font-family: "Plus Jakarta Sans", sans-serif;
@@ -7,28 +9,28 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #fff;
+  background-color: #fff; /* Latar belakang putih untuk keseluruhan halaman */
 }
 
 /* Header Mobile - Modifikasi dari .header Anda */
-.riwayat-page-header { /* Menggunakan class spesifik untuk menghindari konflik jika .header dipakai umum */
+.riwayat-page-header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 16px; /* Padding standar */
+  padding: 16px;
   background-color: #fff;
-  border-bottom: 1px solid #E0E0E0; /* Garis pemisah tipis */
+  border-bottom: 1px solid #E0E0E0;
 }
 
 .riwayat-page-header .back-link-riwayat {
-  margin-right: 16px; /* Jarak antara tombol kembali dan judul */
+  margin-right: 16px;
 }
 
 .riwayat-page-header .backBtn {
   border: none;
   background-color: transparent;
   padding: 0;
-  display: flex; /* Untuk alignment ikon jika perlu */
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -39,14 +41,14 @@ body {
 }
 
 .riwayat-page-header .header-title-riwayat {
-  font-size: 1.15em; /* Sedikit lebih besar */
+  font-size: 1.15em;
   font-weight: 600;
   color: #333;
-  margin: 0; /* Hapus margin default dari <p> */
+  margin: 0;
 }
 
 
-/* Desktop Header (dari CSS Anda, tetap disembunyikan di mobile) */
+/* Desktop Header (dari CSS awal Anda, disembunyikan di mobile oleh media query di bawah) */
 .desktop-header {
   display: none; /* Default disembunyikan, diatur oleh media query Anda */
   flex-direction: row;
@@ -70,13 +72,20 @@ body {
   gap: 2em;
 }
 
+/* Tombol di desktop header, .backBtn sudah diatur di .riwayat-page-header .backBtn jika sama */
+.notifBtn, .chatBtn, .historyBtn {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
 .backBtn, .notifBtn, .chatBtn, .historyBtn { /* .backBtn sudah ada di atas, ini untuk tombol lain di desktop header */
   border: none;
   background-color: transparent;
   padding: 0;
 }
 
-/* Kategori Label LAMA - Tidak digunakan untuk tampilan target */
+/* Kategori Label LAMA dari CSS awal Anda - Tidak digunakan untuk tampilan target, dikomentari */
 /*
 .label {
   padding: 1em;
@@ -96,9 +105,8 @@ body {
   display: flex;
   justify-content: space-around;
   background-color: #fff;
-  padding-top: 8px; /* Sedikit padding atas */
-  /* padding-bottom: 0; Tidak perlu jika border tab yg aktif akan jadi pemisah */
-  border-bottom: 1px solid #E0E0E0; /* Garis pemisah tipis di bawah area tab */
+  padding-top: 8px;
+  border-bottom: 1px solid #E0E0E0;
 }
 
 .riwayat-tab-btn {
@@ -106,8 +114,8 @@ body {
   border: none;
   padding: 12px 16px;
   cursor: pointer;
-  font-size: 0.95em; /* Ukuran font tab */
-  color: #888C9E; /* Warna teks tab non-aktif */
+  font-size: 0.95em;
+  color: #888C9E;
   font-weight: 500;
   flex-grow: 1;
   text-align: center;
@@ -115,71 +123,63 @@ body {
 }
 
 .riwayat-tab-btn.active {
-  color: #4AAD54; /* Warna teks tab aktif (hijau) */
+  color: #4AAD54;
   font-weight: 600;
 }
 
 .riwayat-tab-btn.active::after {
   content: '';
   position: absolute;
-  bottom: -1px; /* Agar menutupi border-bottom dari .riwayat-tabs-container */
-  left: 0; /* Lebarkan ke ujung kiri tab */
-  right: 0; /* Lebarkan ke ujung kanan tab */
+  bottom: -1px;
+  left: 0;
+  right: 0;
   height: 3px;
   background-color: #4AAD54;
-  border-radius: 1.5px; /* Sedikit melengkung di ujung garis */
+  border-radius: 1.5px;
 }
 
 
-/* Kontainer Riwayat (dari CSS Anda) */
+/* Kontainer Daftar Riwayat */
 .riwayat-container {
   display: flex;
   flex-direction: column;
-  gap: 12px; /* Mengurangi gap sedikit dari 1em */
-  padding: 16px; /* Padding konsisten */
-  background-color: #fff; /* Latar belakang utama halaman di bawah tab */
+  gap: 12px;
+  padding: 16px;
+  background-color: #fff;
 }
 
-/* header-kecil (dari CSS Anda, disembunyikan di mobile) */
+/* header-kecil dari CSS awal Anda, disembunyikan di mobile oleh media query */
 .header-kecil {
-  display: none; /* Default disembunyikan, diatur oleh media query Anda */
+  display: none;
   flex-direction: row;
   align-items: center;
 }
 
-/* Kartu Riwayat - Modifikasi */
+/* Kartu Riwayat - Dengan Perbaikan "Setengah Hijau" */
 .riwayat-card {
-  background-color: #F0F7F2; /* Latar belakang hijau muda sesuai gambar target */
-  border: none; /* Menghilangkan border lama */
-  border-radius: 10px; /* Radius sesuai gambar target */
-  /* box-shadow: 0 2px 5px rgba(0,0,0,0.03); */ /* Shadow bisa dihilangkan atau disesuaikan */
-  overflow: hidden;
+  background-color: #FFFFFF;      /* PASTIKAN KARTU DASAR PUTIH */
+  border: 1px solid #EAEAEA;       /* Border tipis untuk kartu */
+  /* atau gunakan box-shadow:
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  */
+  border-radius: 10px;
+  overflow: hidden;                /* Penting agar sudut elemen anak mengikuti jika ada radius di anak */
   display: flex;
   flex-direction: column;
-  padding: 12px; /* Padding di dalam card */
+  margin-bottom: 12px;
+  padding: 0;                     /* PENTING: Hapus padding dari kartu utama. Padding akan diatur di anak. */
 }
 
-/* Label memanjang atas LAMA - Tidak digunakan */
-/*
-.riwayat-label {
-  width: 100%;
-  background-color: rgba(74, 173, 84, 0.1);
-  color: #4AAD54;
-  font-size: 0.8em;
-  font-weight: 600;
-  text-align: center;
-  padding: 0.4em 0;
-  border-bottom: 1px solid rgba(74, 173, 84, 0.3);
-}
-*/
-
-/* Header Toko/Warung di dalam Card BARU */
+/* Header Toko/Warung di dalam Card - Bagian yang Hijau */
 .riwayat-store-header {
+  background-color: #F0F7F2;       /* Latar belakang HIJAU MUDA untuk bagian ini */
+  padding: 10px 12px;              /* Padding di dalam area hijau ini */
   display: flex;
   align-items: center;
-  margin-bottom: 10px; /* Jarak ke konten produk */
+  /* Tidak perlu margin-bottom jika .riwayat-content punya padding atas atau langsung menempel */
 }
 
+/* Style untuk ikon dan nama toko di dalam .riwayat-store-header (pastikan sudah ada) */
 .person-icon-list {
   color: #555;
   margin-right: 8px;
@@ -192,55 +192,66 @@ body {
   color: #333;
 }
 
-/* Isi utama (gambar + info) horizontal - Modifikasi dari .riwayat-content Anda */
+/* Konten Utama per Item Riwayat (gambar produk & info) - Bagian yang HARUSNYA Putih */
 .riwayat-content {
+  background-color: #FFFFFF;       /* EKSPLISIT ATUR PUTIH untuk bagian konten ini */
+  padding: 12px;                   /* Padding di dalam area konten putih ini */
   display: flex;
   flex-direction: row;
-  /* padding: 1em; */ /* Padding sudah di .riwayat-card */
-  gap: 12px; /* Gap antara gambar dan info */
-  align-items: flex-start; /* Agar teks mulai dari atas jika gambar lebih tinggi */
+  gap: 12px;
+  align-items: flex-start;
 }
 
-/* Gambar Produk - Modifikasi dari .riwayat-content img */
-.product-img-riwayat { /* Class baru untuk spesifisitas */
-  width: 60px; /* Ukuran gambar sesuai target */
+/* Style untuk elemen di dalam .riwayat-content (pastikan sudah ada) */
+.product-img-riwayat {
+  width: 60px;
   height: 60px;
   object-fit: cover;
-  border-radius: 8px; /* Radius gambar */
-  /* border: 1px solid #E0E0E0; */ /* Opsional: border tipis pada gambar */
+  border-radius: 8px;
 }
 
-/* Info Produk - Modifikasi dari .riwayat-info Anda */
 .riwayat-info {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Mulai dari atas */
-  gap: 4px; /* Jarak antar teks info */
-  flex-grow: 1; /* Agar mengambil sisa ruang */
+  justify-content: flex-start;
+  gap: 4px;
+  flex-grow: 1;
 }
 
-.riwayat-info .product-name-text { /* Class baru */
+.riwayat-info .product-name-text {
   margin: 0;
   font-size: 1em;
   font-weight: 600;
   color: #333;
 }
 
-.riwayat-info .price-text { /* Class baru */
+.riwayat-info .price-text {
   font-size: 0.95em;
   margin: 0;
   color: #333;
-  font-weight: 500; /* Sedikit tebal untuk harga */
+  font-weight: 500;
 }
 
-.riwayat-info .date-text { /* Class baru */
+.riwayat-info .date-text {
   font-size: 0.8em;
-  color: #757575; /* Warna abu-abu untuk tanggal */
+  color: #757575;
   margin: 0;
 }
+/* Konten Utama per Item Riwayat (gambar produk & info) - Bagian yang Putih */
 
-/* Style lama untuk harga dan lokasi yang mungkin tidak terpakai lagi */
+/* Style lama dari CSS awal Anda yang mungkin tidak terpakai - dikomentari */
 /*
+.riwayat-label { // Label di atas tiap card lama
+  width: 100%;
+  background-color: rgba(74, 173, 84, 0.1);
+  color: #4AAD54;
+  font-size: 0.8em;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.4em 0;
+  border-bottom: 1px solid rgba(74, 173, 84, 0.3);
+}
+
 .donasi {
   color: #4AAD54;
   font-weight: 600;
@@ -251,38 +262,39 @@ body {
   color: #888C9E;
   margin: 0;
 }
-*/
 
-/* .riwayat-card img dari CSS Anda, mungkin sudah tercakup oleh .product-img-riwayat */
-/*
-.riwayat-card img {
+.riwayat-card img { // Style gambar lama yang lebih besar, sudah diganti .product-img-riwayat
   width: 100px;
   height: 100px;
   object-fit: cover;
 }
 */
 
-/* Responsif (dari CSS Anda) */
+/* Responsif (dari CSS awal Anda, disesuaikan) */
 @media screen and (min-width: 768px) {
-  .header.riwayat-page-header { /* Sembunyikan header mobile di desktop */
+  .riwayat-page-header { /* Sembunyikan header mobile di desktop */
     display: none;
   }
 
-  .desktop-header {
-    display: flex; /* Tampilkan header desktop */
+  .desktop-header { /* Tampilkan header desktop dari CSS awal Anda */
+    display: flex;
   }
 
-  .riwayat-tabs-container { /* Styling tab di desktop jika perlu penyesuaian */
-    padding-left: 5%;
+  .header-kecil{ /* Tampilkan header kecil jika ada di HTML desktop Anda */
+    display:flex; /* Sesuaikan ini jika .header-kecil memang untuk desktop */
+  }
+
+  .riwayat-tabs-container {
+    padding-left: 5%; /* Contoh penyesuaian padding tab di desktop */
     padding-right: 5%;
   }
 
   .riwayat-container {
-    padding: 1em 5%;
+    padding: 1em 5%; /* Padding kontainer utama di desktop */
   }
 
   .product-img-riwayat { /* Ukuran gambar produk di desktop jika beda */
-    width: 70px; /* Contoh sedikit lebih besar */
+    width: 70px;
     height: 70px;
   }
 
